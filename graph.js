@@ -121,7 +121,7 @@ exports.handle_root = function (req, res) {
               }\
               var graph = new Dygraph(\
                 document.getElementById("graph"),\
-                "data?period=" + period,\
+                "/graph/data?period=" + period,\
                 {\
                     connectSeparatedPoints: true,\
                     fillGraph: true,\
@@ -141,7 +141,7 @@ exports.handle_root = function (req, res) {
               }\
               if (period === "hour") {\
                 interval_id = setInterval(function() {\
-                  graph.updateOptions( { file: "data?period=" + period } );\
+                  graph.updateOptions( { file: "/graph/data?period=" + period } );\
                 }, 10000);\
               }\
             }\
